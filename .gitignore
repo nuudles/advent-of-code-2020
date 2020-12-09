@@ -6,3 +6,4 @@ out/
 # Gradle
 .gradle
 build/
+src/main/resources/input_day_*.txt
