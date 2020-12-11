@@ -62,7 +62,7 @@ class Day11 : Day(11) {
     override fun partOne(): Any {
         var didChange = true
         while (didChange) {
-//            printBoard()
+            printBoard()
             didChange = false
 
             val newBoard = mutableListOf<String>()
@@ -121,9 +121,6 @@ class Day11 : Day(11) {
                     for (deltaY in -1..1) {
                         if (deltaX == 0 && deltaY == 0) {
                             continue
-                        }
-                        if (x == 6 && y == 0) {
-                            println(board[y][x])
                         }
                         if (canSeeOccupiedSeat(x + deltaX, y + deltaY, deltaX, deltaY)) {
                             occupiedCount++
