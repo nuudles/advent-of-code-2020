@@ -60,6 +60,8 @@ class Day11 : Day(11) {
     }
 
     override fun partOne(): Any {
+        board = inputList
+
         var didChange = true
         while (didChange) {
             printBoard()
@@ -137,6 +139,8 @@ class Day11 : Day(11) {
     }
 
     override fun partTwo(): Any {
+        board = inputList
+
         var didChange = true
         while (didChange) {
             printBoard()
