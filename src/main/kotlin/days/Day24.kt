@@ -54,7 +54,7 @@ class Day24 : Day(24) {
             currentTiles
                 .forEach { tile ->
                     val neighbors = tile.neighbors
-                    val flippedNeighbors = currentTiles.intersect(neighbors)
+                    val flippedNeighbors = neighbors.intersect(currentTiles)
                     val unflippedNeighbors = neighbors.subtract(flippedNeighbors)
                     flippedNeighbors.count().let {
                         if (it != 0 && it <= 2) {
@@ -63,7 +63,7 @@ class Day24 : Day(24) {
                     }
                     unflippedNeighbors.forEach { neighbor ->
                         if (!checkedTiles.contains(neighbor)) {
-                            if (currentTiles.intersect(neighbor.neighbors).count() == 2) {
+                            if (neighbor.neighbors.intersect(currentTiles).count() == 2) {
                                 newTiles.add(neighbor)
                             }
                             checkedTiles.add(neighbor)
